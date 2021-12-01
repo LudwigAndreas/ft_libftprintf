@@ -11,8 +11,9 @@ int main(void)
 	p = 'b';
 	nbr = 7;
 	str = "H";
-	nbr = printf(" %x ", 0);
+	nbr = printf("Hello world!");
+//	printf("%");
 	printf("%d \n", nbr);
-	nbr = ft_printf(" %x ", 0);
+	nbr = ft_printf("Hello world!");
 	ft_printf("%d \n", nbr);
 }

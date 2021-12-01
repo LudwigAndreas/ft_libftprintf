@@ -12,6 +12,16 @@ static char hex_digit(int v, char x)
 	}
 }
 
+int	ft_printstring(char *s, int fd)
+{
+	int i;
+
+	i = 0;
+	while (s[i])
+		ft_putchar_fd(s[i++], fd);
+	return (i);
+}
+
 int	ft_puthexnbr(int nbr, char x)
 {
 	int i;
@@ -59,4 +69,25 @@ int	write_ptr(void *p0)
 	else
 		ft_putstr_fd("0x0", 1);
 	return (3);
+}
+
+int	ft_printnbr(long int n, int fd)
+{
+	char	pr;
+	int		i;
+
+	i = 0;
+	if (n < 0)
+	{
+		i += write(fd, "-", 1);
+		i += ft_printnbr(-n, fd);
+	}
+	else
+	{
+		if (n > 9)
+			i+= ft_printnbr(n / 10, fd);
+		pr = '0' + n % 10;
+		i += write(fd, &pr, 1);
+	}
+	return (i);
 }
