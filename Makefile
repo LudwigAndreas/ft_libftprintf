@@ -3,7 +3,8 @@ CC			:= gcc
 CFLAGS		:= -Wall -Wextra -Werror -c
 OFLAGS		:= -Wall -Wextra -Werror -o
 SRCS		:=	ft_printf.c\
-			write_ptr.c
+			ft_print_tools.c\
+			ft_hex_digit.c
 LIBFT_SRCS	:=	ft_lstnew_bonus.c\
 				ft_lstadd_front_bonus.c\
 				ft_lstlast_bonus.c\
